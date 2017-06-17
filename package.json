@@ -1,0 +1,22 @@
+{
+  "name": "donde",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uberdoodad/Donde.git"
+  },
+  "author": "John Winstead <awatemonosan@gmail.com> (johnwinstead.ninja)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Uberdoodad/Donde/issues"
+  },
+  "homepage": "https://github.com/Uberdoodad/Donde#readme",
+  "dependencies": {
+    "http-proxy": "^1.16.2"
+  }
+}
