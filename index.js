@@ -34,7 +34,7 @@ httpServer = http.createServer( (request, response) => {
       }
     }
     if(score>bestRouteScore){
-      bestRouteDestination =  route.destination;
+      bestRouteDestination = route.destination;
       bestRouteScore = score;
     }
   }
