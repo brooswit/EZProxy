@@ -1,0 +1,7 @@
+{
+  "port": 80,
+  "routes": [
+    {"path": "/api/", "destination": "http://localhost:9000"},
+    {"path": "/",     "destination": "http://localhost:8080"}
+  ]
+}

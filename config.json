@@ -1,7 +1,0 @@
-{
-  "port": 80,
-  "routes": [
-    {"path": "/",            "destination": "localhost:8080"},
-    {"path": "/api/",    "destination": "localhost:9000"}
-  ]
-}

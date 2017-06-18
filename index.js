@@ -15,36 +15,38 @@ if (!String.prototype.format) {
   };
 }
 
-httpServer = http.createServer( (request, response) => {
-  var path = request.url.split('/');
-    path.shift();
-    path = path.join('/');
+http.createServer( (request, response) => {
+  var path = request.url;
 
-  var bestRouteDestination;
-  var bestRouteScore=0;
-
-  for(var routeIndex in routes){
+  // if a matching path exists, this loop will not complete
+  for (var routeIndex in routes){
     var route = routes[routeIndex];
-    var score = 0;
-    for (var charIndex in route.path) {
-      if(route.path[charIndex] == path[charIndex]) {
-        route.score ++;
-      } else {
+
+    for (var charIndex = 0; charIndex < route.path.length; charIndex++) {
+      var routeChar = route.path[charIndex];
+      var char = path[charIndex];
+
+      if (routeChar != char) {
         charIndex = route.path.length;
+
+      } else if (charIndex == route.path.length-1) {
+        var newPath = route.destination;
+
+        for(; charIndex < path.length; charIndex++){
+          newPath += path[charIndex];
+        }
+
+        proxyServer.web(request, response, {
+          target: newPath
+        });
+
+        return;
       }
     }
-    if(score>bestRouteScore){
-      bestRouteDestination = route.destination;
-      bestRouteScore = score;
-    }
   }
-
-  proxyServer.web(request, response, {
-    target: bestRouteDestination
-  });
-}).listen( port, ()=>{
+}).listen(port, ()=>{
   console.log('Proxy listening on port {0}'.format(port));
   routes.forEach((route)=>{
     console.log('"{0}" => "{1}"'.format(route.path, route.destination));
   });
-} );
+});
