@@ -1,21 +1,22 @@
 {
-  "name": "donde",
+  "name": "EZProxy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Easily configurable reverse proxy",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Uberdoodad/Donde.git"
+    "url": "git+https://github.com/brooswit/EZProxy.git"
   },
-  "author": "John Winstead <awatemonosan@gmail.com> (johnwinstead.ninja)",
+  "author": "John Winstead <brooswit@gmail.com> (l337.biz)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Uberdoodad/Donde/issues"
+    "url": "https://github.com/brooswit/EZProxy/issues"
   },
-  "homepage": "https://github.com/Uberdoodad/Donde#readme",
+  "homepage": "https://github.com/brooswit/EZProxy#readme",
   "dependencies": {
     "http-proxy": "^1.16.2"
   }
