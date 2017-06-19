@@ -23,15 +23,11 @@ http.createServer( (request, response) => {
     var route = routes[routeIndex];
         console.log("checkin " +route.path);
 
-    for (var charIndex = 0; charIndex < route.path.length; charIndex++) {
+    for (var charIndex = 0; charIndex <= route.path.length; charIndex++) {
       var routeChar = route.path[charIndex];
       var char = path[charIndex];
 
-      if (routeChar != char) {
-        console.log('NOPE');
-        charIndex = route.path.length;
-
-      } else if (charIndex == route.path.length-1) {
+      if (charIndex == route.path.length-1) {
         console.log('yup');
         var newPath = route.destination;
 
@@ -46,6 +42,10 @@ http.createServer( (request, response) => {
 
         return;
       }
+      else if (routeChar != char) {
+        console.log('NOPE');
+        charIndex = route.path.length;
+      } 
     }
   }
 }).listen(port, ()=>{
