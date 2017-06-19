@@ -45,6 +45,8 @@ http.createServer( (request, response) => {
           forward: newPath
         });
 
+        console.log('=============================================');
+
         return;
       }
       else if (routeChar != char) {
