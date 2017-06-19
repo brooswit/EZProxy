@@ -17,6 +17,9 @@ if (!String.prototype.format) {
 
 http.createServer( (request, response) => {
   var path = request.url;
+  if (path[path.length-1] == '/') {
+    path.pop();
+  }
 
   // if a matching path exists, this loop will not complete
   for (var routeIndex in routes){
