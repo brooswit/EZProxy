@@ -32,6 +32,8 @@ http.createServer( (request, response) => {
       } else if (charIndex == route.path.length-1) {
         var newPath = route.destination;
 
+        charIndex++;
+
         for(; charIndex < path.length; charIndex++){
           newPath += path[charIndex];
         }
