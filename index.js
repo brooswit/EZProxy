@@ -42,7 +42,7 @@ http.createServer( (request, response) => {
         console.log("new NEW path: " + newPath);
 
         proxyServer.web(request, response, {
-          target: newPath
+          forward: newPath
         });
 
         return;
