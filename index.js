@@ -27,16 +27,17 @@ http.createServer( (request, response) => {
       var char = path[charIndex];
 
       if (routeChar != char) {
+        console.log('NOPE');
         charIndex = route.path.length;
 
       } else if (charIndex == route.path.length-1) {
+        console.log('yup');
         var newPath = route.destination;
 
-        charIndex++;
-
-        for(; charIndex < path.length; charIndex++){
+        for(charIndex = charIndex + 1; charIndex < path.length; charIndex++){
           newPath += path[charIndex];
         }
+        console.log('doin it');
 
         proxyServer.web(request, response, {
           target: newPath
