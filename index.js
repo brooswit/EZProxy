@@ -30,7 +30,7 @@ http.createServer( (request, response) => {
       var routeChar = route.path[charIndex];
       var char = path[charIndex];
 
-      if (charIndex == route.path.length-1) {
+      if (charIndex == route.path.length) {
         console.log('yup');
         var newPath = route.destination;
 
