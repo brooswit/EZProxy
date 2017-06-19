@@ -21,6 +21,7 @@ http.createServer( (request, response) => {
   // if a matching path exists, this loop will not complete
   for (var routeIndex in routes){
     var route = routes[routeIndex];
+        console.log("checkin " +route);
 
     for (var charIndex = 0; charIndex < route.path.length; charIndex++) {
       var routeChar = route.path[charIndex];
