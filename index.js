@@ -32,7 +32,7 @@ http.createServer( (request, response) => {
 
       if (charIndex == route.path.length) {
         console.log('yup');
-        var newPath = route.destination;
+        var newPath = route.destination + "/";
         console.log("new path: " + newPath);
 
         for(charIndex = charIndex + 1; charIndex < path.length; charIndex++){
