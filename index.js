@@ -33,11 +33,13 @@ http.createServer( (request, response) => {
       if (charIndex == route.path.length) {
         console.log('yup');
         var newPath = route.destination;
+        console.log("new path: " + newPath);
 
         for(charIndex = charIndex + 1; charIndex < path.length; charIndex++){
           newPath += path[charIndex];
         }
         console.log('doin it');
+        console.log("new NEW path: " + newPath);
 
         proxyServer.web(request, response, {
           target: newPath
